@@ -1,4 +1,7 @@
 node_modules
 .env
+.ENV
+/storage/logs/*
+!/storage/logs/.gitkeep
 /bootstrap/cache/*
 !/bootstrap/cache/.gitkeep
