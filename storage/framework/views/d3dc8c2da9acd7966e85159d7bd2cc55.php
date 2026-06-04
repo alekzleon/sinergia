@@ -67,6 +67,43 @@
         .badge-secondary { background: #DCEDC8; color: #558B2F; }
         .badge-accent { background: #FFE0B2; color: #E65100; }
         .badge-lilac { background: #E1BEE7; color: #673AB7; }
+        .form-label {
+            display: block;
+            margin-bottom: .45rem;
+            color: #30567E;
+            font-size: .875rem;
+            font-weight: 700;
+        }
+        .form-input {
+            width: 100%;
+            border: 1px solid #cbd8e6;
+            background: #fff;
+            border-radius: .85rem;
+            padding: .78rem .95rem;
+            color: #1f2937;
+            font-size: .95rem;
+            line-height: 1.45;
+            box-shadow: 0 1px 2px rgb(15 23 42 / .04);
+            transition: border-color .18s ease, box-shadow .18s ease, background .18s ease;
+        }
+        .form-input::placeholder { color: #9ca3af; }
+        .form-input:hover { border-color: #9DC0E8; background: #fcfdff; }
+        .form-input:focus {
+            outline: none;
+            border-color: #4A7DB5;
+            box-shadow: 0 0 0 4px rgb(74 125 181 / .14);
+            background: #fff;
+        }
+        textarea.form-input { resize: vertical; min-height: 8rem; }
+        .option-chip {
+            min-height: 2.75rem;
+            border: 1px solid #e4eaf1;
+            background: #FAFAF8;
+            border-radius: .8rem;
+            box-shadow: 0 1px 2px rgb(15 23 42 / .03);
+        }
+        .option-chip:hover { border-color: #C8DCF3; background: #EBF3FB; }
+        .option-chip input { width: 1rem; height: 1rem; }
     </style>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
