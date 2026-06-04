@@ -179,8 +179,8 @@ class AdminController extends Controller
             }
         }
 
-        if (isset($data['title']) && array_key_exists('slug', $config['fields']) && empty($data['slug'])) {
-            $data['slug'] = Str::slug($data['title']);
+        if (isset($data['title']) && array_key_exists('slug', $config['fields'])) {
+            $data['slug'] = $this->uniqueSlug($config['model'], $data['title'], $item);
         }
 
         return $data;
@@ -220,6 +220,23 @@ class AdminController extends Controller
         }
 
         abort(404);
+    }
+
+    private function uniqueSlug(string $model, string $title, ?Model $item = null): string
+    {
+        $baseSlug = Str::slug($title) ?: 'registro';
+        $slug = $baseSlug;
+        $counter = 2;
+
+        while ($model::query()
+            ->where('slug', $slug)
+            ->when($item?->exists, fn ($query) => $query->whereKeyNot($item->getKey()))
+            ->exists()) {
+            $slug = "{$baseSlug}-{$counter}";
+            $counter++;
+        }
+
+        return $slug;
     }
 
     private function resource(string $resource): array

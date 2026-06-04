@@ -268,6 +268,53 @@
         .settings-tab-pane { min-height: 360px; }
         .settings-section-card .row { --bs-gutter-x: .75rem; --bs-gutter-y: .7rem; }
         .compact-help { font-size: .75rem; color: var(--muted); }
+        .slug-lock {
+            background: #f8fafc;
+            color: #6c7a8d;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        }
+        .editor-shell {
+            border: 1px solid #dbe5ef;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+        }
+        .editor-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .25rem;
+            align-items: center;
+            padding: .45rem;
+            background: #f8fafc;
+            border-bottom: 1px solid var(--line);
+        }
+        .editor-toolbar button,
+        .editor-toolbar select {
+            height: 30px;
+            border: 1px solid #dbe5ef;
+            border-radius: 6px;
+            background: #fff;
+            color: #334155;
+            font-size: .78rem;
+        }
+        .editor-toolbar button {
+            width: 30px;
+            display: inline-grid;
+            place-items: center;
+        }
+        .editor-toolbar select { width: auto; padding: 0 .45rem; }
+        .rich-editor {
+            min-height: 260px;
+            padding: .8rem;
+            outline: none;
+            line-height: 1.6;
+            font-size: .9rem;
+        }
+        .rich-editor:focus { box-shadow: inset 0 0 0 .18rem rgba(74,125,181,.12); }
+        .rich-editor:empty::before {
+            content: attr(data-placeholder);
+            color: #98a5b6;
+        }
         @media (max-width: 991px) {
             .sidebar { position: static; width: 100%; min-height: auto; }
             .sidebar-inner { min-height: auto; }
@@ -340,5 +387,6 @@
 @endauth
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+@stack('scripts')
 </body>
 </html>
