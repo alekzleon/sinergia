@@ -64,6 +64,7 @@ class SiteSetting extends Model
      */
     public static function clearCache(): void
     {
+        Cache::forget('site_settings_all');
         Cache::flush();
     }
 }
