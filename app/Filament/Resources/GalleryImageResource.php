@@ -34,7 +34,7 @@ class GalleryImageResource extends Resource
     {
         return $form->schema([
             Section::make()->schema([
-                FileUpload::make('image')->label('Imagen')->image()->required()->directory('gallery')->disk('public')->columnSpanFull(),
+                FileUpload::make('image')->label('Imagen')->image()->required()->directory('gallery')->disk('images')->columnSpanFull(),
                 TextInput::make('title')->label('Título (opcional)'),
                 Select::make('category')->label('Categoría')->options([
                     'eventos'     => 'Eventos',
@@ -56,7 +56,7 @@ class GalleryImageResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('order')->label('#')->sortable(),
-                ImageColumn::make('image')->label('Imagen')->disk('public')->width(80)->height(55),
+                ImageColumn::make('image')->label('Imagen')->disk('images')->width(80)->height(55),
                 TextColumn::make('title')->label('Título'),
                 TextColumn::make('category')->label('Categoría')->badge(),
                 IconColumn::make('is_active')->label('Visible')->boolean(),

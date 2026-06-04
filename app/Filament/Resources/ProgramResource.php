@@ -51,7 +51,7 @@ class ProgramResource extends Resource
                 \Filament\Forms\Components\Textarea::make('short_description')
                     ->label('Descripción corta (para tarjetas)')->required()->rows(3),
                 RichEditor::make('description')->label('Descripción completa')->columnSpanFull(),
-                FileUpload::make('image')->label('Imagen')->image()->directory('programs')->disk('public'),
+                FileUpload::make('image')->label('Imagen')->image()->directory('programs')->disk('images'),
             ]),
         ]);
     }
@@ -61,7 +61,7 @@ class ProgramResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('order')->label('#')->sortable(),
-                ImageColumn::make('image')->label('Imagen')->disk('public')->width(50)->height(35),
+                ImageColumn::make('image')->label('Imagen')->disk('images')->width(50)->height(35),
                 TextColumn::make('title')->label('Título')->searchable(),
                 TextColumn::make('color')->label('Color')->badge(),
                 IconColumn::make('is_active')->label('Activo')->boolean(),

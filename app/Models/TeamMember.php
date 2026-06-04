@@ -27,7 +27,7 @@ class TeamMember extends Model
     public function getPhotoUrlAttribute(): string
     {
         return $this->photo
-            ? asset('storage/' . $this->photo)
+            ? asset('images/' . $this->photo)
             : asset('images/default-avatar.jpg');
     }
 }

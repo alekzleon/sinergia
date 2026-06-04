@@ -36,7 +36,7 @@
             </div>
             <div>
                 @if(!empty($siteSettings['about_image']))
-                    <img src="{{ asset('storage/' . $siteSettings['about_image']) }}" alt="Sinergia A.C." class="rounded-3xl shadow-xl w-full object-cover">
+                    <img src="{{ asset('images/' . $siteSettings['about_image']) }}" alt="Sinergia A.C." class="rounded-3xl shadow-xl w-full object-cover">
                 @else
                     <div class="bg-gradient-hope rounded-3xl h-80 flex items-center justify-center text-white text-6xl shadow-xl">🌱</div>
                 @endif
@@ -83,7 +83,7 @@
             <div class="card text-center p-8">
                 <div class="w-28 h-28 rounded-full mx-auto mb-5 overflow-hidden bg-gradient-warm flex items-center justify-center text-white text-4xl font-bold shadow-lg">
                     @if($member->photo)
-                        <img src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->name }}" class="w-full h-full object-cover">
+                        <img src="{{ asset('images/' . $member->photo) }}" alt="{{ $member->name }}" class="w-full h-full object-cover">
                     @else
                         {{ substr($member->name, 0, 1) }}
                     @endif

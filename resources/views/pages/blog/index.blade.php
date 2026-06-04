@@ -19,7 +19,7 @@
             <article class="card group">
                 <div class="h-52 bg-gradient-warm overflow-hidden">
                     @if($post->image)
-                        <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="{{ asset('images/' . $post->image) }}" alt="{{ $post->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     @else
                         <div class="w-full h-full flex items-center justify-center text-5xl text-white/80">📰</div>
                     @endif

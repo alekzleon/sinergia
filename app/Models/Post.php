@@ -50,7 +50,7 @@ class Post extends Model
     public function getImageUrlAttribute(): string
     {
         return $this->image
-            ? asset('storage/' . $this->image)
+            ? asset('images/' . $this->image)
             : asset('images/default-post.jpg');
     }
 

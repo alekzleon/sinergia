@@ -36,7 +36,7 @@ class TeamMemberResource extends Resource
                 TextInput::make('name')->label('Nombre completo')->required(),
                 TextInput::make('role')->label('Cargo / Rol')->required(),
                 Textarea::make('bio')->label('Biografía breve')->rows(4),
-                FileUpload::make('photo')->label('Fotografía')->image()->directory('team')->disk('public'),
+                FileUpload::make('photo')->label('Fotografía')->image()->directory('team')->disk('images'),
                 TextInput::make('order')->label('Orden')->numeric()->default(0),
                 Toggle::make('is_active')->label('Activo')->default(true),
             ])->columns(2),
@@ -54,7 +54,7 @@ class TeamMemberResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('order')->label('#')->sortable(),
-                ImageColumn::make('photo')->label('Foto')->disk('public')->circular()->width(40)->height(40),
+                ImageColumn::make('photo')->label('Foto')->disk('images')->circular()->width(40)->height(40),
                 TextColumn::make('name')->label('Nombre')->searchable(),
                 TextColumn::make('role')->label('Cargo'),
                 IconColumn::make('is_active')->label('Activo')->boolean(),

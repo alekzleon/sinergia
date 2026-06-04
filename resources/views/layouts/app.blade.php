@@ -16,7 +16,7 @@
 
     <!-- Favicon -->
     @if(!empty($siteSettings['site_favicon']))
-        <link rel="icon" type="image/x-icon" href="{{ asset('storage/' . $siteSettings['site_favicon']) }}">
+        <link rel="icon" type="image/x-icon" href="{{ asset('images/' . $siteSettings['site_favicon']) }}">
     @endif
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -31,7 +31,7 @@
                 <!-- Logo -->
                 <a href="{{ route('home') }}" class="flex items-center gap-3 flex-shrink-0">
                     @if(!empty($siteSettings['site_logo']))
-                        <img src="{{ asset('storage/' . $siteSettings['site_logo']) }}" alt="{{ $siteSettings['site_name'] ?? 'Sinergia A.C.' }}" class="h-12 w-auto">
+                        <img src="{{ asset('images/' . $siteSettings['site_logo']) }}" alt="{{ $siteSettings['site_name'] ?? 'Sinergia A.C.' }}" class="h-12 w-auto">
                     @else
                         <div class="w-12 h-12 rounded-full bg-gradient-warm flex items-center justify-center text-white font-bold text-lg shadow">S</div>
                         <div class="hidden sm:block">

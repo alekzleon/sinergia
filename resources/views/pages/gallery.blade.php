@@ -33,9 +33,9 @@
             @foreach($images as $image)
             <div x-show="activeCategory === 'all' || activeCategory === '{{ $image->category }}'"
                  class="break-inside-avoid cursor-zoom-in group relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all">
-                <img src="{{ asset('storage/' . $image->image) }}"
+                <img src="{{ asset('images/' . $image->image) }}"
                      alt="{{ $image->title ?? $image->caption ?? 'Galería Sinergia' }}"
-                     data-lightbox="{{ asset('storage/' . $image->image) }}"
+                     data-lightbox="{{ asset('images/' . $image->image) }}"
                      class="w-full object-cover group-hover:scale-105 transition-transform duration-500">
                 @if($image->caption || $image->title)
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">

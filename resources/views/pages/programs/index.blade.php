@@ -32,7 +32,7 @@
             @endphp
             <div class="card border-t-4 {{ $colorMap[$program->color] ?? 'border-primary-400 bg-white' }} p-8 group">
                 @if($program->image)
-                <img src="{{ asset('storage/' . $program->image) }}" alt="{{ $program->title }}" class="w-full h-48 object-cover rounded-xl mb-6">
+                <img src="{{ asset('images/' . $program->image) }}" alt="{{ $program->title }}" class="w-full h-48 object-cover rounded-xl mb-6">
                 @endif
                 <h2 class="font-heading font-bold text-2xl {{ $titleColor[$program->color] ?? 'text-primary-700' }} mb-3">{{ $program->title }}</h2>
                 <p class="text-gray-600 leading-relaxed mb-6">{{ $program->short_description }}</p>

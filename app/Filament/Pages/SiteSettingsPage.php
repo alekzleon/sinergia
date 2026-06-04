@@ -44,12 +44,12 @@ class SiteSettingsPage extends Page implements HasForms
                         TextInput::make('site_name')->label('Nombre del sitio')->required(),
                         TextInput::make('site_tagline')->label('Slogan'),
                         Textarea::make('site_description')->label('Descripción meta')->rows(3),
-                        FileUpload::make('site_logo')->label('Logo del sitio')->image()->directory('settings')->disk('public'),
-                        FileUpload::make('site_favicon')->label('Favicon')->image()->directory('settings')->disk('public'),
+                        FileUpload::make('site_logo')->label('Logo del sitio')->image()->directory('settings')->disk('images'),
+                        FileUpload::make('site_favicon')->label('Favicon')->image()->directory('settings')->disk('images'),
                     ]),
 
                     Tabs\Tab::make('Hero / Inicio')->schema([
-                        FileUpload::make('hero_image')->label('Imagen de fondo del Hero')->image()->directory('hero')->disk('public'),
+                        FileUpload::make('hero_image')->label('Imagen de fondo del Hero')->image()->directory('hero')->disk('images'),
                         TextInput::make('hero_title')->label('Título del Hero'),
                         Textarea::make('hero_subtitle')->label('Subtítulo del Hero')->rows(3),
                         TextInput::make('hero_cta_text')->label('Botón principal (texto)'),
@@ -57,7 +57,7 @@ class SiteSettingsPage extends Page implements HasForms
                     ]),
 
                     Tabs\Tab::make('Quiénes Somos')->schema([
-                        FileUpload::make('about_image')->label('Imagen Quiénes Somos')->image()->directory('about')->disk('public'),
+                        FileUpload::make('about_image')->label('Imagen Quiénes Somos')->image()->directory('about')->disk('images'),
                         Textarea::make('about_history')->label('Historia de la asociación')->rows(6),
                         Textarea::make('mission')->label('Misión')->rows(4),
                         Textarea::make('vision')->label('Visión')->rows(4),

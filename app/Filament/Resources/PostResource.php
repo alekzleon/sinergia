@@ -47,7 +47,7 @@ class PostResource extends Resource
             ])->columns(2),
 
             Section::make('Imagen y Categoría')->schema([
-                FileUpload::make('image')->label('Imagen destacada')->image()->directory('posts')->disk('public'),
+                FileUpload::make('image')->label('Imagen destacada')->image()->directory('posts')->disk('images'),
                 Select::make('category')->label('Categoría')->options([
                     'noticias'    => 'Noticias',
                     'actividades' => 'Actividades',
@@ -71,7 +71,7 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('image')->label('Imagen')->disk('public')->width(60)->height(40),
+                ImageColumn::make('image')->label('Imagen')->disk('images')->width(60)->height(40),
                 TextColumn::make('title')->label('Título')->searchable()->sortable()->limit(50),
                 TextColumn::make('category')->label('Categoría')->badge()->color('primary'),
                 IconColumn::make('is_published')->label('Publicado')->boolean(),

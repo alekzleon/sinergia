@@ -17,7 +17,7 @@
 <section class="section-padding bg-warm-50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         @if($program->image)
-        <img src="{{ asset('storage/' . $program->image) }}" alt="{{ $program->title }}" class="w-full h-64 md:h-80 object-cover rounded-3xl shadow-lg mb-10">
+        <img src="{{ asset('images/' . $program->image) }}" alt="{{ $program->title }}" class="w-full h-64 md:h-80 object-cover rounded-3xl shadow-lg mb-10">
         @endif
         <div class="bg-white rounded-3xl shadow-md p-8">
             <p class="text-xl text-gray-600 leading-relaxed mb-6 font-medium">{{ $program->short_description }}</p>

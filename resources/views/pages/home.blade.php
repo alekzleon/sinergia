@@ -9,7 +9,7 @@
     {{-- Fondo --}}
     <div class="absolute inset-0">
         @if(!empty($siteSettings['hero_image']))
-            <img src="{{ asset('storage/' . $siteSettings['hero_image']) }}" alt="Fondo" class="w-full h-full object-cover">
+            <img src="{{ asset('images/' . $siteSettings['hero_image']) }}" alt="Fondo" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-hero"></div>
         @else
             <div class="absolute inset-0 bg-gradient-to-br from-primary-700 via-primary-600 to-lilac-600"></div>
@@ -84,7 +84,7 @@
             {{-- Imagen --}}
             <div class="relative">
                 @if(!empty($siteSettings['about_image']))
-                    <img src="{{ asset('storage/' . $siteSettings['about_image']) }}" alt="Quiénes somos" class="rounded-3xl shadow-xl w-full h-96 object-cover">
+                    <img src="{{ asset('images/' . $siteSettings['about_image']) }}" alt="Quiénes somos" class="rounded-3xl shadow-xl w-full h-96 object-cover">
                 @else
                     <div class="rounded-3xl bg-gradient-hope w-full h-96 flex items-center justify-center shadow-xl">
                         <div class="text-center text-white p-10">
@@ -240,7 +240,7 @@
             <div class="card text-center p-8 group">
                 <div class="w-24 h-24 rounded-full mx-auto mb-5 overflow-hidden bg-gradient-warm flex items-center justify-center text-white text-3xl font-bold shadow-md">
                     @if($member->photo)
-                        <img src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->name }}" class="w-full h-full object-cover">
+                        <img src="{{ asset('images/' . $member->photo) }}" alt="{{ $member->name }}" class="w-full h-full object-cover">
                     @else
                         {{ substr($member->name, 0, 1) }}
                     @endif
@@ -274,7 +274,7 @@
             <article class="card group">
                 <div class="h-48 bg-gradient-warm overflow-hidden">
                     @if($post->image)
-                        <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="{{ asset('images/' . $post->image) }}" alt="{{ $post->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     @else
                         <div class="w-full h-full flex items-center justify-center text-5xl text-white/80">📰</div>
                     @endif

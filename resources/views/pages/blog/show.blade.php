@@ -29,7 +29,7 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
         @if($post->image)
-        <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}" class="w-full h-72 md:h-96 object-cover rounded-3xl shadow-lg mb-10">
+        <img src="{{ asset('images/' . $post->image) }}" alt="{{ $post->title }}" class="w-full h-72 md:h-96 object-cover rounded-3xl shadow-lg mb-10">
         @endif
 
         <div class="bg-white rounded-3xl shadow-md p-8 md:p-12">
@@ -66,7 +66,7 @@
                 <article class="card group">
                     <div class="h-36 bg-gradient-warm overflow-hidden">
                         @if($article->image)
-                            <img src="{{ asset('storage/' . $article->image) }}" alt="{{ $article->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="{{ asset('images/' . $article->image) }}" alt="{{ $article->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         @else
                             <div class="w-full h-full flex items-center justify-center text-3xl text-white/80">📰</div>
                         @endif
