@@ -19,7 +19,56 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('images/' . $siteSettings['site_favicon']) }}">
     @endif
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 50: '#EBF3FB', 100: '#C8DCF3', 200: '#9DC0E8', 300: '#71A3DC', 400: '#5B90CF', 500: '#4A7DB5', 600: '#3D6A9A', 700: '#30567E', 800: '#234162', 900: '#162D46' },
+                        secondary: { 50: '#F1F8E9', 100: '#DCEDC8', 200: '#C5E1A5', 300: '#AED581', 400: '#9CCC65', 500: '#7CB342', 600: '#6EA039', 700: '#558B2F', 800: '#3D7A26', 900: '#26691C' },
+                        accent: { 50: '#FFF3E0', 100: '#FFE0B2', 200: '#FFCC80', 300: '#FFB74D', 400: '#FFA726', 500: '#FF8C00', 600: '#F57C00', 700: '#E65100', 800: '#BF360C', 900: '#8D1C0A' },
+                        lilac: { 50: '#F3E5F5', 100: '#E1BEE7', 200: '#CE93D8', 300: '#BA68C8', 400: '#AB47BC', 500: '#9575CD', 600: '#7E57C2', 700: '#673AB7', 800: '#512DA8', 900: '#311B92' },
+                        warm: { 50: '#FAFAF8', 100: '#F5F4F0', 200: '#ECEAE3', 300: '#E0DDD4' },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Nunito', 'sans-serif'],
+                        heading: ['Nunito', 'Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gradient-warm': 'linear-gradient(135deg, #4A7DB5 0%, #9575CD 100%)',
+                        'gradient-hope': 'linear-gradient(135deg, #7CB342 0%, #4A7DB5 100%)',
+                        'gradient-hero': 'linear-gradient(to bottom right, rgba(74,125,181,0.85), rgba(149,117,205,0.75))',
+                    },
+                },
+            },
+        };
+    </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap">
+    <style>
+        body { font-family: Inter, Nunito, sans-serif; color: #374151; }
+        h1, h2, h3, h4, h5, h6, .font-heading { font-family: Nunito, Inter, sans-serif; }
+        .btn-primary { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.5rem; background: #4A7DB5; color: #fff; font-weight: 600; border-radius: 9999px; box-shadow: 0 4px 6px rgb(0 0 0 / .1); transition: all .3s; }
+        .btn-secondary { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.5rem; background: #7CB342; color: #fff; font-weight: 600; border-radius: 9999px; box-shadow: 0 4px 6px rgb(0 0 0 / .1); transition: all .3s; }
+        .btn-outline { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.5rem; border: 2px solid #fff; color: #fff; font-weight: 600; border-radius: 9999px; transition: all .3s; }
+        .btn-accent { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.5rem; background: #FF8C00; color: #fff; font-weight: 600; border-radius: 9999px; box-shadow: 0 4px 6px rgb(0 0 0 / .1); transition: all .3s; }
+        .hero-section { position: relative; min-height: 100vh; display: flex; align-items: center; background: linear-gradient(to bottom right, rgba(74,125,181,0.85), rgba(149,117,205,0.75)); color: #fff; overflow: hidden; }
+        .card, .card-program { background: #fff; border-radius: 1rem; box-shadow: 0 4px 6px rgb(0 0 0 / .1); transition: all .3s; overflow: hidden; }
+        .card-program { padding: 1.5rem; border: 1px solid #f3f4f6; }
+        .section-padding { padding-top: 4rem; padding-bottom: 4rem; }
+        @media (min-width: 768px) { .section-padding { padding-top: 6rem; padding-bottom: 6rem; } }
+        .section-title { font-size: 1.875rem; line-height: 2.25rem; font-weight: 700; color: #3D6A9A; margin-bottom: 1rem; }
+        @media (min-width: 768px) { .section-title { font-size: 2.25rem; line-height: 2.5rem; } }
+        .section-subtitle { font-size: 1.125rem; color: #6b7280; max-width: 42rem; }
+        .nav-link { color: #374151; font-weight: 500; transition: color .2s; position: relative; }
+        .whatsapp-btn { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 50; width: 3.5rem; height: 3.5rem; background: #22c55e; color: #fff; border-radius: 9999px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px rgb(0 0 0 / .1); }
+        .badge { display: inline-block; padding: .25rem .75rem; border-radius: 9999px; font-size: .875rem; font-weight: 600; }
+        .badge-primary { background: #C8DCF3; color: #30567E; }
+        .badge-secondary { background: #DCEDC8; color: #558B2F; }
+        .badge-accent { background: #FFE0B2; color: #E65100; }
+        .badge-lilac { background: #E1BEE7; color: #673AB7; }
+    </style>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="bg-warm-50" x-data="{ menuOpen: false }">
 
@@ -182,7 +231,7 @@
             </div>
         </div>
         <div class="bg-white/95 border-t border-primary-100 py-2 text-center text-[10px] sm:text-xs text-gray-400">
-            Ecommerce desarrollado por
+            Sitio desarrollado por 
             <a href="https://cloudi.mx" target="_blank" rel="noopener" class="font-medium text-gray-500 border-b border-accent-200 hover:text-primary-600 transition-colors">
                 cloudi.mx
             </a>

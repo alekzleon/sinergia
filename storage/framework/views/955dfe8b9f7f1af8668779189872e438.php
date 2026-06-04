@@ -6,12 +6,12 @@
 <section class="relative min-h-screen flex items-center overflow-hidden">
     
     <div class="absolute inset-0">
-        <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(!empty($siteSettings['hero_image'])): ?>
-            <img src="<?php echo e(asset('storage/' . $siteSettings['hero_image'])); ?>" alt="Fondo" class="w-full h-full object-cover">
+        <?php if(!empty($siteSettings['hero_image'])): ?>
+            <img src="<?php echo e(asset('images/' . $siteSettings['hero_image'])); ?>" alt="Fondo" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-hero"></div>
         <?php else: ?>
             <div class="absolute inset-0 bg-gradient-to-br from-primary-700 via-primary-600 to-lilac-600"></div>
-        <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+        <?php endif; ?>
         
         <div class="absolute top-20 right-10 w-72 h-72 bg-secondary-400/20 rounded-full blur-3xl animate-float"></div>
         <div class="absolute bottom-20 left-10 w-56 h-56 bg-accent-400/20 rounded-full blur-2xl animate-float" style="animation-delay:1.5s"></div>
@@ -84,8 +84,8 @@
         <div class="grid lg:grid-cols-2 gap-16 items-center">
             
             <div class="relative">
-                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(!empty($siteSettings['about_image'])): ?>
-                    <img src="<?php echo e(asset('storage/' . $siteSettings['about_image'])); ?>" alt="Quiénes somos" class="rounded-3xl shadow-xl w-full h-96 object-cover">
+                <?php if(!empty($siteSettings['about_image'])): ?>
+                    <img src="<?php echo e(asset('images/' . $siteSettings['about_image'])); ?>" alt="Quiénes somos" class="rounded-3xl shadow-xl w-full h-96 object-cover">
                 <?php else: ?>
                     <div class="rounded-3xl bg-gradient-hope w-full h-96 flex items-center justify-center shadow-xl">
                         <div class="text-center text-white p-10">
@@ -93,7 +93,7 @@
                             <p class="text-xl font-bold">Sembrando esperanza desde 2021</p>
                         </div>
                     </div>
-                <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+                <?php endif; ?>
                 
                 <div class="absolute -bottom-5 -right-5 bg-secondary-500 text-white rounded-2xl px-5 py-3 shadow-lg font-heading font-bold text-center">
                     <p class="text-3xl font-extrabold"><?php echo e(($siteSettings['legal_year'] ?? '2026') - ($siteSettings['founded_year'] ?? '2021')); ?>+</p>
@@ -185,7 +185,7 @@
 </section>
 
 
-<?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if($programs->count()): ?>
+<?php if($programs->count()): ?>
 <section class="section-padding bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-14">
@@ -195,7 +195,7 @@
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $programs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $program): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php $__currentLoopData = $programs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $program): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <?php
                 $colorMap = [
                     'primary'   => ['bg' => 'bg-primary-50', 'icon' => 'bg-primary-100 text-primary-600', 'title' => 'text-primary-700'],
@@ -218,7 +218,7 @@
                     <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </div>
             </a>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
 
         <div class="text-center mt-10">
@@ -226,10 +226,10 @@
         </div>
     </div>
 </section>
-<?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+<?php endif; ?>
 
 
-<?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if($team->count()): ?>
+<?php if($team->count()): ?>
 <section class="section-padding bg-warm-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-14">
@@ -238,31 +238,31 @@
             <p class="section-subtitle mx-auto">Personas comprometidas con un mismo sueño: sembrar esperanza y transformar vidas.</p>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $team; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $member): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php $__currentLoopData = $team; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $member): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="card text-center p-8 group">
                 <div class="w-24 h-24 rounded-full mx-auto mb-5 overflow-hidden bg-gradient-warm flex items-center justify-center text-white text-3xl font-bold shadow-md">
-                    <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if($member->photo): ?>
-                        <img src="<?php echo e(asset('storage/' . $member->photo)); ?>" alt="<?php echo e($member->name); ?>" class="w-full h-full object-cover">
+                    <?php if($member->photo): ?>
+                        <img src="<?php echo e(asset('images/' . $member->photo)); ?>" alt="<?php echo e($member->name); ?>" class="w-full h-full object-cover">
                     <?php else: ?>
                         <?php echo e(substr($member->name, 0, 1)); ?>
 
-                    <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+                    <?php endif; ?>
                 </div>
                 <h3 class="font-heading font-bold text-gray-800 text-lg mb-1"><?php echo e($member->name); ?></h3>
                 <p class="text-primary-600 font-semibold text-sm mb-3"><?php echo e($member->role); ?></p>
-                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if($member->bio): ?>
+                <?php if($member->bio): ?>
                 <p class="text-gray-500 text-sm leading-relaxed"><?php echo e($member->bio); ?></p>
-                <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+                <?php endif; ?>
             </div>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
         <p class="text-center text-gray-500 italic mt-10 text-lg">✨ Unidos por una misma misión: sembrar esperanza y transformar vidas.</p>
     </div>
 </section>
-<?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+<?php endif; ?>
 
 
-<?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if($posts->count()): ?>
+<?php if($posts->count()): ?>
 <section class="section-padding bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-14 gap-4">
@@ -273,36 +273,36 @@
             <a href="<?php echo e(route('blog.index')); ?>" class="btn-primary self-start sm:self-auto">Ver todo el blog</a>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <article class="card group">
                 <div class="h-48 bg-gradient-warm overflow-hidden">
-                    <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if($post->image): ?>
-                        <img src="<?php echo e(asset('storage/' . $post->image)); ?>" alt="<?php echo e($post->title); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <?php if($post->image): ?>
+                        <img src="<?php echo e(asset('images/' . $post->image)); ?>" alt="<?php echo e($post->title); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     <?php else: ?>
                         <div class="w-full h-full flex items-center justify-center text-5xl text-white/80">📰</div>
-                    <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+                    <?php endif; ?>
                 </div>
                 <div class="p-6">
-                    <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if($post->category): ?>
+                    <?php if($post->category): ?>
                     <span class="badge badge-primary mb-3"><?php echo e($post->category); ?></span>
-                    <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+                    <?php endif; ?>
                     <h3 class="font-heading font-bold text-gray-800 text-lg mb-2 group-hover:text-primary-600 transition-colors">
                         <a href="<?php echo e(route('blog.show', $post->slug)); ?>"><?php echo e($post->title); ?></a>
                     </h3>
-                    <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if($post->excerpt): ?>
+                    <?php if($post->excerpt): ?>
                     <p class="text-gray-500 text-sm leading-relaxed mb-4"><?php echo e(Str::limit($post->excerpt, 120)); ?></p>
-                    <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+                    <?php endif; ?>
                     <div class="flex items-center justify-between text-xs text-gray-400">
                         <span><?php echo e($post->published_at?->format('d M, Y')); ?></span>
                         <a href="<?php echo e(route('blog.show', $post->slug)); ?>" class="text-primary-600 font-semibold hover:underline">Leer más →</a>
                     </div>
                 </div>
             </article>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
     </div>
 </section>
-<?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+<?php endif; ?>
 
 
 <section class="section-padding bg-gradient-to-r from-accent-500 to-orange-600 text-white">
